@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@theme {
+	--color-bg-base: #0b0f19;
+	--color-bg-surface: #111827;
+	--color-primary: #3b82f6;
+	--color-text-main: #f9fafb;
+	--color-text-muted: #9ca3af;
+	--color-border: #1f2937;
+
+	--container-max-width: 1280px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--color-bg-base);
+	color: var(--color-text-main);
+	font-family: Inter, system-ui, sans-serif;
+}
