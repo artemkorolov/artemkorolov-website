@@ -1,0 +1,30 @@
+---
+import Container from "../ui/Container.astro";
+import SocialLinks from "../ui/SocialLinks.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-12 border-t border-border bg-bg-surface mt-auto">
+	<Container>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+			<p class="text-text-muted text-sm text-center md:text-left">
+				© {currentYear} Artem Korolov.
+			</p>
+
+			<nav class="flex justify-center gap-6 text-sm text-text-main">
+				<a href="#about" class="hover:text-primary transition-colors"
+					>Про мене</a
+				>
+				<a href="#projects" class="hover:text-primary transition-colors"
+					>Проєкти</a
+				>
+				<a href="#blog" class="hover:text-primary transition-colors">Блог</a>
+			</nav>
+
+			<div class="flex justify-center md:justify-end">
+				<SocialLinks />
+			</div>
+		</div>
+	</Container>
+</footer>
