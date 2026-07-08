@@ -1,0 +1,64 @@
+---
+import Container from "../ui/Container.astro";
+
+const reviews = [
+	{
+		platform: "Upwork",
+		rating: "★★★★★",
+		text: "Great experience working with Artem. Very strong attention to detail — he kept refining and adjusting everything until it was exactly right. Skilled, experienced, and easy to work with.",
+		author: "Wilson Williams · Nigeria",
+	},
+	{
+		platform: "Fiverr",
+		rating: "★★★★★",
+		text: "Artem K surpassed expectations with his impeccable attention to detail and code expertise, delivering a truly professional website. His polite and proactive communication made the collaboration smooth and efficient.",
+		author: "Thomasaunora · Denmark",
+	},
+	{
+		platform: "Freelancehunt",
+		rating: "★★★★★",
+		text: "Артем дуже якісно і раніше терміну виконав замовлення. Були враховані всі мої побажання. Дуже задоволена роботою і рекомендую!",
+		author: "Олена Мартинюк · Ukraine",
+	},
+	{
+		platform: "Freelancehunt",
+		rating: "★★★★★",
+		text: "Дуже швидко виконав роботу. Щиро вдячний!",
+		author: "Андрій Синіцин · Ukraine",
+	},
+];
+---
+
+<section id="reviews" class="py-20">
+	<Container>
+		<div class="max-w-2xl mb-12">
+			<h2 class="text-3xl font-bold mb-4">Відгуки клієнтів</h2>
+
+			<p class="text-text-muted leading-relaxed">
+				Відгуки клієнтів з платформ Upwork, Fiverr та Freelancehunt.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-6">
+			{
+				reviews.map((review) => (
+					<div class="rounded-2xl border border-border bg-bg-base/50 p-7">
+						<div class="mb-6">
+							<div class="text-primary text-lg tracking-[2px]">
+								{review.rating}
+							</div>
+
+							<p class="mt-3 text-sm text-text-muted">{review.platform}</p>
+						</div>
+
+						<p class="text-base leading-relaxed">"{review.text}"</p>
+
+						<div class="mt-6 pt-5 border-t border-border">
+							<p class="text-sm text-text-muted">{review.author}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</section>
