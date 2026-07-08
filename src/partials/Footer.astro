@@ -1,5 +1,6 @@
 ---
 import Container from "../ui/Container.astro";
+import NavLinks from "../ui/NavLinks.astro";
 import SocialLinks from "../ui/SocialLinks.astro";
 
 const currentYear = new Date().getFullYear();
@@ -13,13 +14,7 @@ const currentYear = new Date().getFullYear();
 			</p>
 
 			<nav class="flex justify-center gap-6 text-sm text-text-main">
-				<a href="#about" class="hover:text-primary transition-colors"
-					>Про мене</a
-				>
-				<a href="#projects" class="hover:text-primary transition-colors"
-					>Проєкти</a
-				>
-				<a href="#blog" class="hover:text-primary transition-colors">Блог</a>
+				<NavLinks />
 			</nav>
 
 			<div class="flex justify-center md:justify-end">
