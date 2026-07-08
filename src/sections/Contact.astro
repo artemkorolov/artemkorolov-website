@@ -1,0 +1,23 @@
+---
+import Container from "../ui/Container.astro";
+import Button from "../ui/Button.astro";
+---
+
+<section id="contact" class="py-24">
+	<Container>
+		<div class="max-w-3xl mx-auto text-center">
+			<h2 class="text-4xl font-bold mb-5">Обговоримо ваш проєкт</h2>
+
+			<p class="text-text-muted leading-relaxed mb-8">
+				Маєте ідею або потрібен сайт для бізнесу? Напишіть мені — обговоримо
+				вашу задачу та знайдемо оптимальне рішення.
+			</p>
+
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<Button href="https://t.me/...">Написати в Telegram</Button>
+
+				<Button href="mailto:..." variant="secondary">Email</Button>
+			</div>
+		</div>
+	</Container>
+</section>
