@@ -1,0 +1,24 @@
+[
+	{
+		"title": "AI Revolution",
+		"description": "Преміальна цільова сторінка з високою конверсією",
+		"tags": [
+			"Astro",
+			"Tailwind",
+			"TypeScript"
+		],
+		"link": "#",
+		"image": "src/assets/project-1.png"
+	},
+	{
+		"title": "Buyer Magnet Reset",
+		"description": "Мінімалістична цільова сторінка в стилі SaaS",
+		"tags": [
+			"HTML",
+			"CSS",
+			"JavaScript"
+		],
+		"link": "#",
+		"image": "src/assets/project-2.png"
+	}
+]
