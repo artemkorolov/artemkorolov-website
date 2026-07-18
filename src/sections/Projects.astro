@@ -16,10 +16,10 @@ console.log("Знайдено проєктів:", allProjects.length);
 		{
 			allProjects.length === 0 ? (
 				<p class="text-center text-red-500">
-					Проєктів не знайдено. Перевірте шлях src/content/projects/
+					Проєктів не знайдено.
 				</p>
 			) : (
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 					{allProjects.map(
 						(
 							p: CollectionEntry<"projects">, 
