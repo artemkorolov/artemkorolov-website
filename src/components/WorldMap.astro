@@ -1,0 +1,38 @@
+---
+import MapPaths from "../ui/MapPath.astro";
+
+interface Marker {
+	x: number;
+	y: number;
+	label: string;
+}
+
+interface Props {
+	markers: Marker[];
+}
+
+const { markers } = Astro.props;
+---
+
+<svg viewBox="0 0 2000 857" class="w-full h-auto">
+	<MapPaths />
+	{
+		markers.map((marker: Marker) => (
+			<g class="cursor-pointer group">
+				<circle
+					cx={marker.x}
+					cy={marker.y}
+					r="12"
+					class="fill-blue-600 transition-all duration-300 group-hover:r-4"
+				/>
+				<text
+					x={marker.x + 20}
+					y={marker.y + 5}
+					class="fill-white font-medium pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
+				>
+					{marker.label}
+				</text>
+			</g>
+		))
+	}
+</svg>
