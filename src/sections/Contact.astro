@@ -1,23 +1,27 @@
 ---
 import Container from "../ui/Container.astro";
 import Button from "../ui/Button.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import ActionLink from "../ui/ActionLink.astro";
 ---
 
-<section id="contact" class="py-24">
-	<Container>
-		<div class="max-w-3xl mx-auto text-center">
-			<h2 class="text-4xl font-bold mb-5">Обговоримо ваш проєкт</h2>
+<section id="contact" class="py-32 border-t border-line">
+  <Container>
+    <div class="max-w-xl mx-auto text-center space-y-12">
+      <SectionHeader
+        center
+        title="Зв'язок"
+        subtitle="Маєте ідею або власний проєкт? Напишіть мені в Telegram чи на пошту — обговоримо всі деталі"
+      />
 
-			<p class="text-text-muted leading-relaxed mb-8">
-				Маєте ідею або потрібен сайт для бізнесу? Напишіть мені — обговоримо
-				вашу задачу та знайдемо оптимальне рішення.
-			</p>
+      <div class="flex flex-col mb-12 sm:flex-row justify-center gap-4">
+        <Button href="https://t.me/artm_korolov">Telegram</Button>
+        <Button href="mailto:artmkorolov@gmail.com" variant="secondary">
+          Email
+        </Button>
+      </div>
 
-			<div class="flex flex-col sm:flex-row justify-center gap-4">
-				<Button href="https://t.me/...">Написати в Telegram</Button>
-
-				<Button href="mailto:..." variant="secondary">Email</Button>
-			</div>
-		</div>
-	</Container>
+      <ActionLink href="/contact" text="Детальніше про контакти →" />
+    </div>
+  </Container>
 </section>

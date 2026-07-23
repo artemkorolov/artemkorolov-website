@@ -2,37 +2,126 @@
 import MapPaths from "../ui/MapPath.astro";
 
 interface Marker {
-	x: number;
-	y: number;
-	label: string;
+  x: number;
+  y: number;
+  label: string;
+}
+
+interface MarkerWithDirection extends Marker {
+  direction: "left" | "right";
 }
 
 interface Props {
-	markers: Marker[];
+  markers: Marker[];
+  mobileViewBox?: { x: number; y: number; width: number; height: number };
 }
 
-const { markers } = Astro.props;
+const { markers, mobileViewBox = { x: 880, y: 100, width: 500, height: 460 } } =
+  Astro.props;
+
+const desktopViewBox = "0 0 2000 857";
+const mobileVB = `${mobileViewBox.x} ${mobileViewBox.y} ${mobileViewBox.width} ${mobileViewBox.height}`;
+const rightEdgeThreshold = mobileViewBox.x + mobileViewBox.width * 0.8;
+
+function callout(
+  x: number,
+  y: number,
+  label: string,
+  direction: "left" | "right",
+) {
+  const dx = direction === "right" ? 1 : -1;
+  const kinkX = x + dx * 22;
+  const kinkY = y - 18;
+  const endX = kinkX + dx * (label.length * 6 + 8);
+  const textX = endX + dx * 5;
+  const path = `M ${x} ${y} L ${kinkX} ${kinkY} L ${endX} ${kinkY}`;
+  return { kinkX, kinkY, endX, textX, path };
+}
+
+const desktopMarkers: MarkerWithDirection[] = markers.map((m: Marker) => ({
+  ...m,
+  direction: m.x > 1700 ? "left" : "right",
+}));
+
+const mobileMarkers: MarkerWithDirection[] = markers
+  .filter(
+    (m: Marker) =>
+      m.x > mobileViewBox.x &&
+      m.x < mobileViewBox.x + mobileViewBox.width &&
+      m.y > mobileViewBox.y &&
+      m.y < mobileViewBox.y + mobileViewBox.height,
+  )
+  .map((m: Marker) => ({
+    ...m,
+    direction: m.x > rightEdgeThreshold ? "left" : "right",
+  }));
 ---
 
-<svg viewBox="0 0 2000 857" class="w-full h-auto">
-	<MapPaths />
-	{
-		markers.map((marker: Marker) => (
-			<g class="cursor-pointer group">
-				<circle
-					cx={marker.x}
-					cy={marker.y}
-					r="12"
-					class="fill-blue-600 transition-all duration-300 group-hover:r-4"
-				/>
-				<text
-					x={marker.x + 20}
-					y={marker.y + 5}
-					class="fill-white font-medium pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"
-				>
-					{marker.label}
-				</text>
-			</g>
-		))
-	}
-</svg>
+<div class="w-full">
+  
+  <svg
+    viewBox={mobileVB}
+    preserveAspectRatio="xMidYMid meet"
+    class="w-full h-auto block md:hidden"
+  >
+    <MapPaths />
+    {
+      mobileMarkers.map((m: MarkerWithDirection) => {
+        const c = callout(m.x, m.y, m.label, m.direction);
+        return (
+          <g>
+            <circle
+              cx={m.x}
+              cy={m.y}
+              r="7"
+              class="fill-primary stroke-primary stroke-[3px]"
+            />
+            <path d={c.path} fill="none" class="stroke-white/40 stroke-[1px]" />
+            <circle cx={c.endX} cy={c.kinkY} r="1.5" class="fill-white/40" />
+            <text
+              x={c.textX}
+              y={c.kinkY - 5}
+              text-anchor={m.direction === "right" ? "start" : "end"}
+              class="fill-white text-[13px] font-mono uppercase tracking-wide select-none"
+            >
+              {m.label}
+            </text>
+          </g>
+        );
+      })
+    }
+  </svg>
+
+  <svg
+    viewBox={desktopViewBox}
+    preserveAspectRatio="xMidYMid meet"
+    class="w-full h-auto hidden md:block"
+  >
+    <MapPaths />
+    {
+      desktopMarkers.map((m: MarkerWithDirection) => {
+        const c = callout(m.x, m.y, m.label, m.direction);
+        return (
+          <g>
+            <circle
+              cx={m.x}
+              cy={m.y}
+              r="7"
+              class="fill-white stroke-primary stroke-[3px]"
+            />
+            <path d={c.path} fill="none" class="stroke-white/40 stroke-[1px]" />
+            <circle cx={c.endX} cy={c.kinkY} r="1.5" class="fill-white/40" />
+            <text
+              x={c.textX}
+              y={c.kinkY - 5}
+              text-anchor={m.direction === "right" ? "start" : "end"}
+              class="fill-white text-[16px] font-mono uppercase tracking-wide select-none"
+            >
+              {m.label}
+            </text>
+          </g>
+        );
+      })
+    }
+  </svg>
+</div>

@@ -7,7 +7,9 @@ import MenuToggle from "../ui/MenuToggle.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 ---
 
-<header class="border-b border-border bg-surface">
+<header
+	class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-hero/80 backdrop-blur-md"
+>
 	<Container>
 		<div class="flex h-20 items-center justify-between">
 			<Logo />
@@ -17,7 +19,7 @@ import MobileMenu from "../components/MobileMenu.astro";
 			</div>
 
 			<div class="hidden md:flex items-center">
-				<Button href="#contact">Обговорити проєкт</Button>
+				<Button href="/#contact" variant="secondary">Обговорити проєкт</Button>
 			</div>
 
 			<MenuToggle />

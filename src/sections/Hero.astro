@@ -1,61 +1,75 @@
 ---
 import Container from "../ui/Container.astro";
 import Button from "../ui/Button.astro";
-import SocialLinks from "../ui/SocialLinks.astro";
+import ActionLink from "../ui/ActionLink.astro";
 ---
 
-<section class="py-24 md:py-40 overflow-hidden">
-  <Container>
+<section
+  class="relative min-h-screen flex items-center overflow-hidden bg-hero"
+>
+  <Container class="relative z-10 w-full">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-8 text-center md:text-left">
+      <div class="md:col-span-7 text-center md:text-left pt-20">
         <h1
-          class="text-5xl md:text-7xl font-extrabold mb-8 text-text-main leading-tight tracking-tight"
+          class="text-5xl md:text-6xl font-light mb-8 text-heading leading-[1.1] tracking-tight"
         >
-          Створюю професійні <span class="text-primary">вебрішення</span> для
-          вашого бізнесу
+          Розробка сайтів <br />
+          <span class="text-subtle">для вашого бізнесу</span>
         </h1>
-        <p class="text-xl text-text-muted mb-10 max-w-2xl mx-auto md:mx-0">
-          Від лендингів до складних вебзастосунків. Допомагаю малому бізнесу
-          автоматизувати процеси та масштабуватися завдяки сучасним технологіям.
-        </p>
-        <div class="flex gap-4 justify-center md:justify-start">
-          <Button href="#contact">Обговорити проєкт</Button>
-          <a
-            href="#projects"
-            class="group inline-flex items-center gap-2 text-base font-medium text-text-main hover:text-primary transition-colors"
-          >
-            Мої роботи
-            <span class="transition-transform group-hover:translate-x-1">→</span
-            >
-          </a>
-        </div>
-      </div>
 
-      <div class="md:col-span-4 relative hidden md:block">
-        <div
-          class="aspect-3/4 rounded-2xl bg-surface border border-border relative overflow-hidden shadow-2xl group"
+        <p
+          class="text-xl text-subtle mb-10 max-w-lg mx-auto md:mx-0 leading-relaxed font-light"
         >
-          <div
-            class="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent z-10"
-          >
-          </div>
+          Лендинги, корпоративні сайти, калькулятори розрахунків та інші
+          веб-рішення
+        </p>
 
-          <img
-            src="./src/assets/artem-korolov.png"
-            alt="Артем Корольов - Веб-розробник"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-
-          <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
-            <p class="text-white font-bold text-lg">Артем Корольов</p>
-            <p class="text-primary font-medium text-sm mb-4">
-              Fullstack Розробник
-            </p>
-
-           <SocialLinks/>
-          </div>
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start items-center"
+        >
+          <Button href="#contact">Обговорити проєкт</Button>
+          <ActionLink href="/projects" text="Мої роботи →" />
         </div>
       </div>
     </div>
   </Container>
+
+
+  <div
+    class="absolute inset-y-0 right-0 w-full md:w-[50%] z-0 pointer-events-none hero-video-mask overflow-hidden"
+  >
+    <video
+      id="hero-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="w-full h-full object-cover opacity-30 md:opacity-40"
+    >
+      <source src="/videos/hero-video.mp4" type="video/mp4" />
+    </video>
+
+    <div
+      class="absolute inset-0 hidden md:block bg-gradient-to-r from-hero via-hero/20 to-transparent"
+    >
+    </div>
+  </div>
 </section>
+
+<style>
+  .hero-video-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3) 0%,
+      black 50%
+    );
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, black 50%);
+  }
+
+  @media (min-width: 768px) {
+    .hero-video-mask {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+</style>

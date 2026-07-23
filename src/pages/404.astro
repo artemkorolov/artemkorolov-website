@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../ui/Container.astro";
+import PageHeader from "../ui/PageHeader.astro";
+import Button from "../ui/Button.astro";
+---
+
+<BaseLayout
+	title="Артем Корольов | Сторінку не знайдено"
+	description="Сторінку, яку ви шукаєте, не знайдено або вона була переміщена."
+>
+	<section class="py-32 min-h-[70vh] flex items-center">
+		<Container>
+			<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
+				<div class="">
+					<PageHeader
+						title="Помилка 404"
+						subtitle="Сторінку, яку ви шукаєте, не знайдено або вона була переміщена."
+					/>
+				</div>
+
+				<Button href="/">На головну сторінку</Button>
+			</div>
+		</Container>
+	</section>
+</BaseLayout>

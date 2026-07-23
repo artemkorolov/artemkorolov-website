@@ -2,16 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../sections/Hero.astro";
 import About from "../sections/About.astro";
-import Projects from "../sections/Projects.astro";
 import Contact from "../sections/Contact.astro";
+import FeaturedProjects from "../sections/FeaturedProjects.astro";
 ---
 
 <BaseLayout
 	title="Веброзробка для бізнесу | Артем Корольов"
 	description="Допомагаю малому бізнесу створювати сучасні, швидкі, зручні вебсайти та вебзастосунки"
+	image="/images/home-preview.jpg"
 >
 	<Hero />
 	<About />
-	<Projects />
+	<FeaturedProjects />
 	<Contact />
 </BaseLayout>

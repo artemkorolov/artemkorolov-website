@@ -4,48 +4,74 @@ interface Props {
 }
 
 const { class: className } = Astro.props;
+
+const iconClass =
+	"w-9 h-9 flex items-center justify-center rounded-sm border border-line text-white/50 hover:text-white hover:border-white/30 transition-all duration-300";
 ---
 
-<div class={`flex gap-4 ${className || ""}`}>
-	<!-- Telegram -->
+<div class={`flex gap-3 ${className || ""}`}>
 	<a
-		href="https://t.me/..."
+		href="https://t.me/artm_korolov"
 		target="_blank"
-		class="text-white/70 hover:text-white transition-colors"
+		class={iconClass}
+		aria-label="Telegram"
 	>
-		<span class="sr-only">Telegram</span>
-		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
-			><path
-				d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.12l-1.85 8.71c-.13.59-.49.73-.99.45l-2.73-2.01-1.32 1.27c-.15.15-.27.27-.55.27l.2-2.88 5.25-4.74c.23-.2-.05-.31-.35-.11l-6.5 4.09-2.81-.88c-.61-.19-.62-.61.13-.9l10.9-4.2c.5-.19.95.12.78.89z"
-			></path></svg
+		<svg
+			class="w-4 h-4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			viewBox="0 0 24 24"
 		>
+			<path d="M21.5 2L2 9.5l7.5 3.5L21.5 2z"></path>
+			<path d="M9.5 13L14 18.5l3-9.5-12.5 4z"></path>
+			<path d="M9.5 13v6.5l3.5-3.5"></path>
+		</svg>
 	</a>
 
-	<!-- Instagram -->
 	<a
-		href="https://instagram.com/..."
+		href="https://instagram.com/artm_korolov/"
 		target="_blank"
-		class="text-white/70 hover:text-white transition-colors"
+		class={iconClass}
+		aria-label="Instagram"
 	>
-		<span class="sr-only">Instagram</span>
-		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
-			><path
-				d="M12 2.163c3.204 0 3.584.012 4.85.07 1.173.055 1.81.252 2.234.417.562.217.962.476 1.382.896.42.42.679.82.896 1.382.165.424.362 1.061.417 2.234.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.173-.252 1.81-.417 2.234-.217.562-.476.962-.896 1.382-.42.42-.82.679-1.382.896-.424.165-1.061.362-2.234.417-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.173-.055-1.81-.252-2.234-.417-.562-.217-.962-.476-1.382-.896-.42-.42-.679-.82-.896-1.382-.165-.424-.362-1.061-.417-2.234-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.055-1.173.252-1.81.417-2.234.217-.562.476-.962.896-1.382.42-.42.82-.679 1.382-.896.424-.165 1.061-.362 2.234-.417.146-.006 1.266-.07 4.85-.07zm0 1.62c-3.132 0-3.504.012-4.746.068-1.14.052-1.758.236-2.168.396-.433.167-.74.367-1.064.692-.325.325-.525.632-.692 1.064-.16.41-.344 1.028-.396 2.168-.056 1.242-.068 1.614-.068 4.746s.012 3.504.068 4.746c.052 1.14.236 1.758.396 2.168.167.433.367.74.692 1.064.325.325.632.525 1.064.692.41.16 1.028.344 2.168.396 1.242.056 1.614.068 4.746.068s3.504-.012 4.746-.068c1.14-.052 1.758-.236 2.168-.396.433-.167.74-.367 1.064-.692.325-.325.525-.632.692-1.064.16-.41.344-1.028.396-2.168.056-1.242.068-1.614.068-4.746s-.012-3.504-.068-4.746c-.052-1.14-.236-1.758-.396-2.168-.167-.433-.367-.74-1.064-.692-.41-.16-1.028-.344-2.168-.396-1.242-.056-1.614-.068-4.746-.068zm0 3.753c-2.35 0-4.256 1.906-4.256 4.256s1.906 4.256 4.256 4.256 4.256-1.906 4.256-4.256-1.906-4.256-4.256-4.256zm0 6.892c-1.455 0-2.636-1.181-2.636-2.636s1.181-2.636 2.636-2.636 2.636 1.181 2.636 2.636-1.181 2.636-2.636 2.636zm5.352-7.854c0 .548-.445.993-1.003.993-.558 0-1.003-.445-1.003-.993 0-.548.445-.993 1.003-.993.558 0 1.003.445 1.003.993z"
-			></path></svg
+		<svg
+			class="w-4 h-4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			viewBox="0 0 24 24"
 		>
+			<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+			<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+			<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+		</svg>
 	</a>
 
-	<!-- LinkedIn -->
 	<a
-		href="https://linkedin.com/in/..."
+		href="https://linkedin.com/in/artm-korolov"
 		target="_blank"
-		class="text-white/70 hover:text-white transition-colors"
+		class={iconClass}
+		aria-label="LinkedIn"
 	>
-		<span class="sr-only">LinkedIn</span>
-		<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
-			><path
-				d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"
-			></path></svg
+		<svg
+			class="w-4 h-4"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.7"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			viewBox="0 0 24 24"
 		>
+			<path
+				d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+			></path>
+			<rect x="2" y="9" width="4" height="12"></rect>
+			<circle cx="4" cy="4" r="2"></circle>
+		</svg>
 	</a>
 </div>

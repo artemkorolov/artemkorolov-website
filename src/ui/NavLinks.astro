@@ -1,27 +1,27 @@
 ---
 const links = [
 	{
-		name: "Про мене",
-		href: "/#about",
-	},
-	{
 		name: "Проєкти",
-		href: "/#projects",
+		href: "/projects",
 	},
 	{
 		name: "Відгуки",
 		href: "/testimonials",
 	},
 	{
+		name: "Про мене",
+		href: "/about",
+	},
+	{
 		name: "Контакти",
-		href: "/#contact",
+		href: "/contact",
 	},
 ];
 ---
 
 {
 	links.map((link) => (
-		<a href={link.href} class="hover:text-primary transition-colors">
+		<a href={link.href} class="text-sm text-subtle hover:text-text-main transition-colors">
 			{link.name}
 		</a>
 	))

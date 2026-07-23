@@ -1,0 +1,76 @@
+---
+import Container from "../ui/Container.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import ActionLink from "../ui/ActionLink.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const allProjects = await getCollection("projects");
+
+const sortedProjects = [...allProjects].sort((a, b) => {
+  const orderA = Number(a.data.order) || 99;
+  const orderB = Number(b.data.order) || 99;
+  return orderA - orderB;
+});
+
+const displayedProjects = sortedProjects.slice(0, 2);
+---
+
+<section id="projects" class="py-32">
+  <Container>
+    <SectionHeader
+      title="Портфоліо"
+      subtitle="Обрані цифрові продукти та технічні реалізації"
+    />
+
+    {
+      displayedProjects.length === 0 ? (
+        <p class="border border-line py-12 text-center text-white/20 uppercase tracking-[0.2em] text-[10px]">
+          Наразі проєкти в процесі додавання.
+        </p>
+      ) : (
+        <>
+          <div class="grid md:grid-cols-2 gap-8">
+            {displayedProjects.map((p) => (
+              <a
+                href={`/projects/${p.id}`}
+                class="group block border border-line bg-white/[0.04] hover:bg-white/[0.08] transition-all duration-500 rounded-sm overflow-hidden"
+              >
+                <!-- Зображення -->
+                <div class="aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={p.data.image}
+                    alt={p.data.title}
+                    class="w-full h-full object-cover object-top transition-all duration-700 grayscale group-hover:grayscale-0 group-hover: brightness-75 group-hover:brightness-100"
+                  />
+                </div>
+
+                <!-- Контент -->
+                <div class="p-8">
+                  <h3 class="text-xl font-regular text-heading mb-2">
+                    {p.data.title}
+                  </h3>
+                  <p class="leading-relaxed mb-6 font-light text-subtle max-w-2xl">
+                    {p.data.description}
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 pt-4 border-t border-line">
+                    {p.data.tags.map((tag: string) => (
+                      <span class="text-[10px] uppercase tracking-widest text-subtle border border-line px-2 py-0.5 rounded-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div class="mt-12 text-center md:text-right">
+            <ActionLink href="/projects" text="Переглянути всі проєкти →" />
+          </div>
+        </>
+      )
+    }
+  </Container>
+</section>

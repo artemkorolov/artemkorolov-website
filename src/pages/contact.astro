@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../ui/Container.astro";
+import PageHeader from "../ui/PageHeader.astro";
+import Button from "../ui/Button.astro";
+---
+
+<BaseLayout
+	title="Контакти | Артем Корольов"
+	description="Зв'яжіться зі мною для обговорення вашого проєкту."
+	image="/images/home-preview.jpg"
+>
+	<section class="py-32">
+		<Container>
+			<PageHeader
+				title="Контакти"
+				subtitle="Обговоримо вашу ідею, завдання та можливі рішення"
+			/>
+
+			<div class="grid lg:grid-cols-12 gap-16">
+				<div class="lg:col-span-7 space-y-16">
+					<article
+						class="text-base leading-relaxed text-subtle font-light max-w-2xl"
+					>
+						<p>
+							Завжди радий обговорити новий проєкт, підказати технічне рішення
+							чи допомогти реалізувати вашу ідею. Напишіть мені у зручному для
+							вас месенджері або на пошту — відповім протягом робочого дня.
+						</p>
+					</article>
+
+					<div class="grid sm:grid-cols-2 gap-12 border-t border-line pt-16">
+						<div class="flex items-start gap-6">
+							<span
+								class="text-[10px] uppercase tracking-[0.2em] text-subtle pt-1"
+								>Локація</span
+							>
+							<p class="text-sm text-heading">
+								Україна, Кам'янське <br />
+								<span
+									class="text-[10px] uppercase tracking-[0.1em] text-subtle"
+									>(працюю віддалено)</span
+								>
+							</p>
+						</div>
+
+						<div class="flex items-start gap-6">
+							<span
+								class="text-[10px] uppercase tracking-[0.2em] text-subtle pt-1"
+								>Графік</span
+							>
+							<p class="text-sm text-heading">
+								Пн–Пт, 10:00 – 19:00 <br />
+								<span
+									class="text-[10px] uppercase tracking-[0.1em] text-subtle"
+									>GMT+2</span
+								>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="lg:col-span-4 lg:col-start-9 flex flex-col gap-4">
+					<h2 class="text-[10px] uppercase tracking-[0.3em] text-subtle mb-4">
+						Швидкий зв'язок
+					</h2>
+
+					<Button href="https://t.me/artm_korolov" variant="secondary">
+						Telegram — @artm_korolov
+					</Button>
+
+					<Button href="mailto:artemkorolov24@gmail.com" variant="secondary">
+						Email — artemkorolov24@gmail.com
+					</Button>
+
+					<Button
+						href="https://www.instagram.com/artm_korolov/"
+						variant="secondary"
+					>
+						Instagram — @artm_korolov
+					</Button>
+				</div>
+			</div>
+		</Container>
+	</section>
+</BaseLayout>

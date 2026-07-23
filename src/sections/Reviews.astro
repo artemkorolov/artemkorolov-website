@@ -1,64 +1,67 @@
 ---
 import Container from "../ui/Container.astro";
+import PageHeader from "../ui/PageHeader.astro";
 
 const reviews = [
 	{
 		platform: "Upwork",
-		rating: "★★★★★",
 		text: "Great experience working with Artem. Very strong attention to detail — he kept refining and adjusting everything until it was exactly right. Skilled, experienced, and easy to work with.",
 		author: "Wilson Williams · Nigeria",
 	},
 	{
 		platform: "Fiverr",
-		rating: "★★★★★",
 		text: "Artem K surpassed expectations with his impeccable attention to detail and code expertise, delivering a truly professional website. His polite and proactive communication made the collaboration smooth and efficient.",
 		author: "Thomasaunora · Denmark",
 	},
 	{
 		platform: "Freelancehunt",
-		rating: "★★★★★",
 		text: "Артем дуже якісно і раніше терміну виконав замовлення. Були враховані всі мої побажання. Дуже задоволена роботою і рекомендую!",
 		author: "Олена Мартинюк · Ukraine",
 	},
 	{
 		platform: "Freelancehunt",
-		rating: "★★★★★",
 		text: "Дуже швидко виконав роботу. Щиро вдячний!",
 		author: "Андрій Синіцин · Ukraine",
 	},
 ];
 ---
 
-<section id="" class="py-20">
-	<Container>
-		<div class="max-w-2xl mb-12">
-			<h2 class="text-4xl font-bold mb-6 text-text-main">Відгуки клієнтів</h2>
+<section class="py-32">
+  <Container>
+    <PageHeader
+      title="Відгуки"
+      subtitle="Що кажуть клієнти про досвід співпраці"
+    />
 
-			<p class="text-text-muted leading-relaxed">
-				Відгуки клієнтів з платформ Upwork, Fiverr та Freelancehunt.
-			</p>
-		</div>
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        reviews.map((review) => (
+          <div class="p-8 border border-line bg-card transition-all duration-500 rounded-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-8">
+                <span class="text-[10px] uppercase tracking-[0.2em] text-faint">
+                  {review.platform}
+                </span>
+                <div class="flex gap-0.5">
+                  {[...Array(5)].map(() => (
+                    <span class="text-[10px] text-faded">★</span>
+                  ))}
+                </div>
+              </div>
 
-		<div class="grid md:grid-cols-2 gap-6">
-			{
-				reviews.map((review) => (
-					<div class="rounded-2xl border border-border bg-bg-base/50 p-7">
-						<div class="mb-6">
-							<div class="text-primary text-lg tracking-[2px]">
-								{review.rating}
-							</div>
+              <p class="text-base text-subtle leading-relaxed font-light ">
+                "{review.text}"
+              </p>
+            </div>
 
-							<p class="mt-3 text-sm text-text-muted">{review.platform}</p>
-						</div>
-
-						<p class="text-base leading-relaxed">"{review.text}"</p>
-
-						<div class="mt-6 pt-5 border-t border-border">
-							<p class="text-sm text-text-muted">{review.author}</p>
-						</div>
-					</div>
-				))
-			}
-		</div>
-	</Container>
+            <div class="mt-8 pt-6 border-t border-line">
+              <p class="text-[10px] uppercase tracking-[0.1em] text-faded">
+                {review.author}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </section>

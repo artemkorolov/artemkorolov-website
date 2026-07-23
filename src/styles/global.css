@@ -2,14 +2,27 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-	--color-bg-base: #0b0f19;
+	--color-bg-base: #08090a;
+	--color-hero: #040404;
 	--color-bg-surface: #111827;
-	--color-primary: #3b82f6;
+	--color-primary: #fff;
 	--color-text-main: #f9fafb;
 	--color-text-muted: #9ca3af;
-	--color-border: #1f2937;
+
+	--color-heading: #fff;
+	--color-faded: rgba(255, 255, 255, 0.2);
+	--color-faint: rgba(255, 255, 255, 0.3);
+	--color-subtle: rgba(255, 255, 255, 0.4);
+	--color-btn: #fff;
+	--color-text-btn: #000;
+	--color-line: rgba(255, 255, 255, 0.05);
+	--color-card: rgba(255, 255, 255, 0.04);
 
 	--container-max-width: 1280px;
+}
+
+body.light {
+	--color-bg-base: #ffffff;
 }
 
 html {
@@ -20,4 +33,27 @@ body {
 	background: var(--color-bg-base);
 	color: var(--color-text-main);
 	font-family: Inter, system-ui, sans-serif;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-text-muted) var(--color-bg-base);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-faint);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-subtle);
 }

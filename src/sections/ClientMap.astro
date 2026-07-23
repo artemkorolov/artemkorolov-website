@@ -1,23 +1,21 @@
 ---
 import Container from "../ui/Container.astro";
 import WorldMap from "../components/WorldMap.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
 
 const clients = [
-	{ x: 1152, y: 195, label: "Ukraine" },
-	{ x: 1048, y: 430, label: "Nigeria" },
-	{ x: 1035, y: 148, label: "Denmark" },
+	{ x: 1152, y: 195, label: "Україна" },
+	{ x: 1048, y: 430, label: "Нігерія" },
+	{ x: 1035, y: 148, label: "Данія" },
 ];
 ---
 
-<section id="map" class="py-20">
+<section id="map" class="py-32  border-t border-line">
 	<Container>
-		<div class="max-w-2xl mb-12">
-			<h2 class="text-4xl font-bold mb-6 text-text-main">Міжнародний досвід</h2>
-
-			<p class="text-text-muted leading-relaxed">
-				Реалізовані проєкти для клієнтів із {clients.length} країн світу.
-			</p>
-		</div>
+		<SectionHeader
+			title="Міжнародний досвід"
+			subtitle=`Реалізовані проєкти для клієнтів із ${clients.length} країн світу`
+		/>
 
 		<div class="max-w-6xl mx-auto">
 			<WorldMap markers={clients} />

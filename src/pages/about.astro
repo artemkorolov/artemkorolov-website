@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../ui/Container.astro";
+import PageHeader from "../ui/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Артем Корольов | Про мене"
+  description="Fullstack-розробник. Мій шлях у веб-розробці від навчання до створення цифрових продуктів."
+  image="/images/home-preview.jpg"
+>
+  <section class="py-32">
+    <Container>
+      <PageHeader title="Про мене" subtitle="Мій шлях у веб-розробці" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
+        <div class="lg:col-span-4">
+          <div class="sticky top-24 space-y-8">
+            <div
+              class="aspect-[3/4] overflow-hidden rounded-sm border border-white/10"
+            >
+              <img
+                src="/images/my-photo.jpg"
+                alt="Артем Корольов"
+                class="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 space-y-24">
+        <article
+            class="text-base leading-relaxed text-subtle max-w-2xl font-light"
+          >
+            <p>
+              Мій шлях у розробку розпочався у 2020 році з навчання в <strong
+                >IT Step Academy</strong
+              >. Це був фундамент, який дав мені розуміння логіки програмування
+              та роботи з інтерфейсами.
+            </p>
+
+            <div class="flex justify-center my-16">
+              <div class="grid grid-cols-2 gap-6 max-w-lg w-full">
+                <div
+                  class="aspect-[4/3] overflow-hidden rounded-sm border border-line group"
+                >
+                  <img
+                    src="/images/my-diploma.png"
+                    alt="Диплом IT Step 1"
+                    class="h-full w-full object-cover object-top grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
+                  />
+                </div>
+
+                <div
+                  class="aspect-[4/3] overflow-hidden rounded-sm border border-line group"
+                >
+                  <img
+                    src="/images/tech-pie.jpg"
+                    alt="Диплом IT Step 2"
+                    class="h-full w-full object-cover object-top grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <p class="mb-6">
+              Після академії я активно занурився у практичну верстку, створюючи інтерфейси за допомогоюHTML, CSS, JS, Bootstrap та SCSS. 
+            </p>
+
+            <p>
+              Згодом почав працювати з WordPress, а далі поступово перейшов до архітектури сучасних вебзастосунків. Сьогодні мій стек — це React, TypeScript, Astro та Firebase. Моя мета — створювати інструменти, які не просто працюють, а приносять реальну цінність бізнесу.
+            </p>
+          </article>
+
+          <div class="space-y-12">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] text-subtle">
+              Мій технічний фокус
+            </h2>
+
+            <div
+              class="prose prose-invert prose-p:text-subtle prose-p:font-light prose-p:leading-relaxed max-w-2xl"
+            >
+              <p>
+                На сьогоднішній день мій основний фокус зосереджений на <span class="text-heading"
+                  >Frontend-розробці</span
+                >. Я спеціалізуюся на створенні сучасних SPA та SSR застосунків,
+                використовуючи React та Astro. Це дозволяє мені
+                забезпечувати високу продуктивність та зручну адаптивну верстку,
+                яка інтегрується з будь-якими API.
+              </p>
+
+              <p>
+                Паралельно я маю глибокий досвід роботи з <span class="text-heading"
+                  >WordPress</span
+                >. Я займаюся кастомізацією тем, а розробляю власні
+                шаблони та оптимізую технічні показники швидкості сайтів, щоб
+                вони відповідали вебстандартам.
+              </p>
+
+              <p>
+                Крім того, мій досвід охоплює базові знання <span class="text-heading"
+                  >Backend-розробки</span
+                >. Я працюю з Node.js та базами даних, такими як
+                PostgreSQL, Firebase, що дозволяє мені реалізовувати
+                повноцінні Fullstack-проєкти, де інтерфейс органічно взаємодіє з
+                серверною частиною.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
