@@ -2,11 +2,11 @@
 title: "Лендинг Buyer Magnet Reset"
 description: "Мінімалістична цільова сторінка з акцентом на типографіку, простір та естетику."
 tags: ["HTML", "CSS", "JavaScript", "Minimalism"]
-image: "/src/assets/magnet-landing.png"
+image: "./magnet-landing.png"
 order: 2
 ---
 
-![Повний огляд лендінгу Buyer Magnet Reset](/src/assets/magnet-landing.png)
+![Повний огляд лендінгу Buyer Magnet Reset](./magnet-landing.png)
 <em>— Прев'ю та структура мінімалістичного SaaS-лендінгу.</em>
 
 ## Концепція проєкту: Clarity over noise

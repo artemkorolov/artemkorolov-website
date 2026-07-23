@@ -2,11 +2,11 @@
 title: "Криптотрекер CoinVault"
 description: "Адмін-панель для моніторингу ринку в реальному часі та керування портфоліо."
 tags: ["React 19", "Vite", "React Router", "API Integration"]
-image: "/src/assets/coin-vault.png"
+image: "./coin-vault.png"
 order: 3
 ---
 
-![Головна панель трекера CoinVault](/src/assets/coin-vault.png)
+![Головна панель трекера CoinVault](./coin-vault.png)
 <em>— Інтерфейс дашборду з пошуком, сортуванням та актуальними даними криптовалют.</em>
 
 ## Концепція проєкту
