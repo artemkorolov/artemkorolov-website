@@ -1,4 +1,3 @@
-
 export function initMenu(): void {
 	const btn = document.getElementById('menu-toggle') as HTMLButtonElement | null;
 	const menu = document.getElementById('mobile-menu') as HTMLDivElement | null;
@@ -12,6 +11,12 @@ export function initMenu(): void {
 
 		ham?.classList.toggle('hidden', !isHidden);
 		cross?.classList.toggle('hidden', isHidden);
+
+		if (!isHidden) {
+			document.body.classList.add('overflow-hidden');
+		} else {
+			document.body.classList.remove('overflow-hidden');
+		}
 	};
 
 	btn.addEventListener('click', toggleMenu);
@@ -21,6 +26,7 @@ export function initMenu(): void {
 			menu.classList.add('hidden');
 			ham?.classList.remove('hidden');
 			cross?.classList.add('hidden');
+			document.body.classList.remove('overflow-hidden');
 		});
 	});
 }
