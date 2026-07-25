@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Container from "../ui/Container.astro";
+import PageHeader from "../ui/PageHeader.astro";
+import Button from "../ui/Button.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import ActionLink from "../ui/ActionLink.astro";
+
+const services = [
+	{
+		num: "01",
+		title: "Сайт-візитка / Лендинг",
+		price: "від 10 000 грн",
+		description:
+			"Ідеальне рішення для презентації послуги, продукту або запуску реклами. Сайт допомагає залучати клієнтів та збирати заявки.",
+		timeline: "3-7 днів",
+		features: ["Адаптивний дизайн", "Швидке завантаження", "SEO-оптимізація"],
+	},
+	{
+		num: "02",
+		title: "Корпоративний сайт",
+		price: "від 15 000 грн",
+		description:
+			"Повноцінне представлення компанії в інтернеті. Сайт для послуг, команди, кейсів та формування довіри до вашого бізнесу.",
+		timeline: "7-14 днів",
+		features: ["Багатосторінковість", "Форми зв'язку", "Структура під бізнес"],
+	},
+	{
+		num: "03",
+		title: "Інтернет-магазин OpenCart",
+		price: "від 20 000 грн",
+		description:
+			"Функціональне рішення для продажу товарів онлайн: каталог, фільтри, кошик, оплата та необхідні інтеграції.",
+		timeline: "від 14 днів",
+		features: ["Адмін-панель", "Оплата та доставка", "Підготовка до реклами"],
+	},
+	{
+		num: "04",
+		title: "Калькулятори та інтерактив",
+		price: "від 10 000 грн",
+		description:
+			"Розробка спеціальної функціональності: калькулятори вартості, складні форми, фільтри та інтерактивні рішення.",
+		timeline: "від 5 днів",
+		features: [
+			"Унікальна логіка",
+			"Інтеграція з сайтом",
+			"Висока продуктивність",
+		],
+	},
+	{
+		num: "05",
+		title: "Технічна підтримка та супровід",
+		price: "від 2 000 грн / міс",
+		description:
+			"Регулярна підтримка сайту: оновлення, моніторинг, виправлення помилок та розвиток функціоналу.",
+		timeline: "щомісяця",
+		features: ["Моніторинг сайту", "Оперативні правки", "Резервні копії"],
+	},
+];
+---
+
+<BaseLayout
+	title="Послуги та ціни на розробку сайтів | Артем Корольов"
+	description="Створення сучасних сайтів для бізнесу та особистих проєктів: лендинги, корпоративні сайти, інтернет-магазини та індивідуальні веб-рішення."
+	image="/images/home-preview.jpg"
+>
+	<section class="py-32">
+		<Container>
+			<PageHeader
+				title="Послуги та ціни"
+				subtitle="Готові рішення з орієнтовною вартістю розробки"
+			/>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{
+					services.map((s) => (
+						<div class="border border-line bg-white/[0.04] p-8 flex flex-col justify-between rounded-sm group hover:bg-white/[0.08] transition-all duration-500">
+							<div class="space-y-6">
+								<div class="flex items-center justify-between">
+									<span class="text-[10px] uppercase tracking-[0.3em] text-heading font-medium border border-line px-2 py-0.5 rounded-sm">
+										{s.num}
+									</span>
+
+									<span class="text-sm text-heading font-medium tracking-wide">
+										{s.price}
+									</span>
+								</div>
+
+								<h3 class="text-xl font-regular text-heading tracking-wide">
+									{s.title}
+								</h3>
+
+								<p class="text-base text-subtle leading-relaxed font-light line-clamp-4">
+									{s.description}
+								</p>
+
+								<ul class="space-y-3 pt-4 border-t border-white/5 text-base font-light text-subtle">
+									{s.features.map((feature) => (
+										<li class="flex items-center gap-3">
+											<span class="text-heading font-medium">✓</span>
+											{feature}
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div class="pt-8 flex items-center justify-between border-t border-line mt-8">
+								<span class="text-xs uppercase tracking-widest text-heading font-light">
+									{s.timeline}
+								</span>
+
+								<a
+									href="#project-cost"
+									class="text-xs uppercase tracking-widest text-heading group-hover:translate-x-1 transition-transform duration-300 inline-block"
+								>
+									Обговорити →
+								</a>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</Container>
+	</section>
+
+	<section id="project-cost" class="py-32 border-t border-line">
+		<Container>
+			<div class="max-w-xl mx-auto text-center space-y-12">
+				<SectionHeader
+					center
+					title="Розрахунок вартості проєкту"
+					subtitle="Вказані ціни є орієнтовними та допомагають оцінити бюджет розробки."
+				/>
+
+				<p
+					class="text-base md:text-lg text-subtle leading-relaxed font-light -mt-6"
+				>
+					Кожен проєкт має свої особливості. Після обговорення ваших цілей я
+					підберу оптимальне рішення та підготую точну пропозицію.
+				</p>
+
+				<div class="flex flex-col mb-12 sm:flex-row justify-center gap-4">
+					<Button href="https://t.me/artm_korolov">Telegram</Button>
+
+					<Button href="mailto:artemkorolov24@gmail.com" variant="secondary">
+						Email
+					</Button>
+				</div>
+
+				<ActionLink href="/contact" text="Перейти до контактів →" />
+			</div>
+		</Container>
+	</section>
+</BaseLayout>
