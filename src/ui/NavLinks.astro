@@ -1,6 +1,10 @@
 ---
 const links = [
 	{
+		name: "Послуги",
+		href: "/services",
+	},
+	{
 		name: "Проєкти",
 		href: "/projects",
 	},
@@ -18,7 +22,7 @@ const links = [
 	},
 ];
 ---
-
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 text-center">
 {
 	links.map((link) => (
 		<a href={link.href} class="text-sm text-subtle hover:text-text-main transition-colors">
@@ -26,3 +30,4 @@ const links = [
 		</a>
 	))
 }
+</div>
