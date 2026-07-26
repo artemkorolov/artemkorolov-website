@@ -10,12 +10,12 @@
 	--color-text-muted: #9ca3af;
 
 	--color-heading: #fff;
-	--color-faded: rgba(255, 255, 255, 0.2);
-	--color-faint: rgba(255, 255, 255, 0.3);
-	--color-subtle: rgba(255, 255, 255, 0.4);
+	--color-faded: rgba(255, 255, 255, 0.35);
+	--color-faint: rgba(255, 255, 255, 0.45);
+	--color-subtle: rgba(255, 255, 255, 0.65);
 	--color-btn: #fff;
 	--color-text-btn: #000;
-	--color-line: rgba(255, 255, 255, 0.05);
+	--color-line: rgba(255, 255, 255, 0.08);
 	--color-card: rgba(255, 255, 255, 0.04);
 
 	--container-max-width: 1280px;
