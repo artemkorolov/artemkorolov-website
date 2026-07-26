@@ -18,69 +18,76 @@ import Button from "../ui/Button.astro";
 			/>
 
 			<div class="grid lg:grid-cols-12 gap-16">
-				<div class="lg:col-span-7 space-y-16">
-					<article
-						class="text-base leading-relaxed text-subtle font-light max-w-2xl"
-					>
-						<p>
-							Завжди радий обговорити новий проєкт, підказати технічне рішення
-							чи допомогти реалізувати вашу ідею. Напишіть мені у зручному для
-							вас месенджері або на пошту — відповім протягом робочого дня.
-						</p>
-					</article>
+	<div class="lg:col-span-7 space-y-16">
+		<article
+			class="text-base leading-relaxed text-subtle font-light max-w-2xl"
+		>
+			<p>
+				Маєте ідею для сайту або потребуєте оновлення існуючого
+				проєкту? Розкажіть про вашу задачу — допоможу підібрати
+				підхід, технології та оптимальне рішення.
+			</p>
 
-					<div class="grid sm:grid-cols-2 gap-12 border-t border-line pt-16">
-						<div class="flex items-start gap-6">
-							<span
-								class="text-[10px] uppercase tracking-[0.2em] text-subtle pt-1"
-								>Локація</span
-							>
-							<p class="text-sm text-text-muted">
-								Україна, Кам'янське <br />
-								<span
-									class="text-[10px] uppercase tracking-[0.1em] text-text-muted"
-									>(працюю віддалено)</span
-								>
-							</p>
-						</div>
+			<p class="mt-6">
+				Працюю з лендингами, корпоративними сайтами,
+				інтернет-магазинами та індивідуальними веб-рішеннями
+				для бізнесу й особистих проєктів.
+			</p>
+		</article>
 
-						<div class="flex items-start gap-6">
-							<span
-								class="text-[10px] uppercase tracking-[0.2em] text-subtle pt-1"
-								>Графік</span
-							>
-							<p class="text-sm text-text-muted">
-								Пн–Пт, 10:00 – 19:00 <br />
-								<span
-									class="text-[10px] uppercase tracking-[0.1em] text-text-muted"
-									>(Київський час)</span
-								>
-							</p>
-						</div>
-					</div>
+		<div class="border-t border-line pt-16">
+			<h2 class="text-[10px] uppercase tracking-[0.3em] text-subtle mb-8">
+				Як проходить робота
+			</h2>
+
+			<div class="space-y-6 text-sm text-subtle">
+				<div>
+					<span class="text-text-muted">01. </span>
+					 Обговорення задачі та цілей проєкту
 				</div>
 
-				<div class="lg:col-span-4 lg:col-start-9 flex flex-col gap-4">
-					<h2 class="text-[10px] uppercase tracking-[0.3em] text-subtle mb-4">
-						Швидкий зв'язок
-					</h2>
+				<div>
+					<span class="text-text-muted">02. </span>
+					 Підбір рішення та оцінка вартості
+				</div>
 
-					<Button href="https://t.me/artm_korolov" variant="secondary">
-						Telegram — @artm_korolov
-					</Button>
-
-					<Button href="mailto:artemkorolov24@gmail.com" variant="secondary">
-						Email — artemkorolov24@gmail.com
-					</Button>
-
-					<Button
-						href="https://www.instagram.com/artm_korolov/"
-						variant="secondary"
-					>
-						Instagram — @artm_korolov
-					</Button>
+				<div>
+					<span class="text-text-muted">03. </span>
+					 Розробка, тестування та запуск готового продукту
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="lg:col-span-4 lg:col-start-9 flex flex-col gap-4">
+		<h2 class="text-[10px] uppercase tracking-[0.3em] text-subtle mb-4">
+			Зв'язатися
+		</h2>
+
+		<Button href="https://t.me/artm_korolov" variant="secondary">
+			Telegram — @artm_korolov
+		</Button>
+
+		<Button
+			href="mailto:artemkorolov24@gmail.com"
+			variant="secondary"
+		>
+			Email — artemkorolov24@gmail.com
+		</Button>
+
+		<Button
+			href="https://www.instagram.com/artm_korolov/"
+			variant="secondary"
+		>
+			Instagram — @artm_korolov
+		</Button>
+
+		<p class="text-xs text-subtle mt-8 leading-relaxed">
+			Зазвичай відповідаю протягом робочого дня.
+			Працюю віддалено з клієнтами з різних країн.
+		</p>
+	</div>
+</div>
 		</Container>
 	</section>
 </BaseLayout>
