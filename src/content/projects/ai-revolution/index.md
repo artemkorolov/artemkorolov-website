@@ -1,6 +1,6 @@
 ---
 title: "Лендинг AI-Revolution"
-description: "Цільова сторінка з фокусом на конверсію, швидкість та бездоганний адаптивний дизайн."
+description: "Односторінковий сайт з фокусом на конверсію, швидкість та  адаптивний дизайн."
 tags: ["Astro", "Tailwind CSS", "TypeScript", "Performance"]
 image: "./ai-revolution.png"
 order: 1

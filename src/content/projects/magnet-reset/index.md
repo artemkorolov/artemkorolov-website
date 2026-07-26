@@ -1,6 +1,6 @@
 ---
 title: "Лендинг Buyer Magnet Reset"
-description: "Мінімалістична цільова сторінка з акцентом на типографіку, простір та естетику."
+description: "Мінімалістичний односторінковий сайт з акцентом на типографіку, простір та естетику."
 tags: ["HTML", "CSS", "JavaScript", "Minimalism"]
 image: "./magnet-landing.png"
 order: 2
